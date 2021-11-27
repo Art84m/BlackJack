@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8CA41119-15DC-4358-AD12-F44A5F26010E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Blackjack</RootNamespace>
+    <AssemblyName>Blackjack</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Card.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game.cs" />
+    <Compile Include="GameIO.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_club_two.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\club_ace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\club_eight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\club_five.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\club_four.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\club_jacket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\club_king.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\club_nine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\club_queen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\club_seven.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\club_six.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\club_ten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\club_three.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamond_ace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamond_eight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamond_five.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamond_four.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamond_jacket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamond_king.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamond_nine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamond_queen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamond_seven.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamond_six.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamond_ten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamond_three.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamond_two.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_ace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_eight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_five.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_four.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_jacket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_king.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_nine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_queen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_seven.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_six.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_ten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_three.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_two.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spade_ace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spade_eight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spade_five.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spade_four.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spade_jacket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spade_king.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spade_nine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spade_queen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spade_seven.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spade_six.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spade_ten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spade_three.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spade_two.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets'))" />
+  </Target>
+</Project>
