@@ -39,8 +39,8 @@ namespace Blackjack
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonHit = new System.Windows.Forms.Button();
+            this.buttonStand = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -132,25 +132,25 @@ namespace Blackjack
             this.label2.TabIndex = 3;
             this.label2.Text = "Player hand:";
             // 
-            // button1
+            // buttonHit
             // 
-            this.button1.Location = new System.Drawing.Point(370, 405);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Hit";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonHit.Location = new System.Drawing.Point(370, 405);
+            this.buttonHit.Name = "buttonHit";
+            this.buttonHit.Size = new System.Drawing.Size(75, 23);
+            this.buttonHit.TabIndex = 5;
+            this.buttonHit.Text = "Hit";
+            this.buttonHit.UseVisualStyleBackColor = true;
+            this.buttonHit.Click += new System.EventHandler(this.buttonHit_Click);
             // 
-            // button2
+            // buttonStand
             // 
-            this.button2.Location = new System.Drawing.Point(451, 405);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Stand";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonStand.Location = new System.Drawing.Point(451, 405);
+            this.buttonStand.Name = "buttonStand";
+            this.buttonStand.Size = new System.Drawing.Size(75, 23);
+            this.buttonStand.TabIndex = 6;
+            this.buttonStand.Text = "Stand";
+            this.buttonStand.UseVisualStyleBackColor = true;
+            this.buttonStand.Click += new System.EventHandler(this.buttonStand_Click);
             // 
             // pictureBox2
             // 
@@ -180,8 +180,8 @@ namespace Blackjack
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(698, 449);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonStand);
+            this.Controls.Add(this.buttonHit);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -211,8 +211,8 @@ namespace Blackjack
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonHit;
+        private System.Windows.Forms.Button buttonStand;
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;

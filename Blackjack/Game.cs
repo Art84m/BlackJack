@@ -12,6 +12,11 @@ namespace Blackjack
         public HashSet<Card> dilerHand { set; get; }
         public HashSet<Card> playerHand { set; get; }
 
+        public int playerTotalScore { set; get; }
+        public int dealerTotalScore { set; get; }
+
+        public bool playerIsStand { set; get; }
+
         private Random random = new Random();
 
         public Game()
@@ -33,6 +38,11 @@ namespace Blackjack
             dilerHand.Clear();
             playerHand.Clear();
 
+            playerTotalScore = 0;
+            dealerTotalScore = 0;
+
+            playerIsStand = false;
+
             dilerHand.Add(takeFromDeck());
 
             Card lastCard = takeFromDeck();
@@ -41,6 +51,27 @@ namespace Blackjack
 
             playerHand.Add(takeFromDeck());
 
+        }
+
+        public void playerHit()
+        {
+            playerHand.Add(takeFromDeck());
+            playerTotalScore = calculateHand(playerHand);
+        }
+
+        public void dealerHit()
+        {
+            dealerTotalScore = calculateHand(dilerHand);
+            while(dealerTotalScore < 17)
+            {
+                dilerHand.Add(takeFromDeck());
+                dealerTotalScore = calculateHand(dilerHand);
+                if (dealerTotalScore > playerTotalScore)
+                {
+                    break;
+                }
+            }
+            openFlippedCard(dilerHand);
         }
 
         private Card takeFromDeck()
@@ -59,6 +90,14 @@ namespace Blackjack
                 total = total + card.value;
             }
             return total;
+        }
+
+        private void openFlippedCard(HashSet<Card> hand)
+        {
+            foreach (Card card in hand)
+            {
+                card.isFlippedBack = false;
+            }
         }
 
     }

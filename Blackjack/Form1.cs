@@ -56,14 +56,29 @@ namespace Blackjack
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonHit_Click(object sender, EventArgs e)
         {
-            if (game == null)
+            if (game == null || game.playerIsStand)
             {
                 return;
             }
 
+            game.playerHit();
             pictureBox2.Refresh();
+
+            if(game.playerTotalScore > 21)
+            {
+                MessageBox.Show("You loose the game!");
+                pictureBox1.Refresh();
+            }
+
+            if(game.playerTotalScore == 21)
+            {
+                game.playerIsStand = true;
+                game.dealerHit();
+                pictureBox1.Refresh();
+                showRoundResult();
+            }
 
         }
 
@@ -92,9 +107,41 @@ namespace Blackjack
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonStand_Click(object sender, EventArgs e)
         {
+            if (game == null)
+            {
+                return;
+            }
 
+            game.playerIsStand = true;
+            game.dealerHit();
+            pictureBox1.Refresh();
+            showRoundResult();
+        }
+
+        private void showRoundResult()
+        {
+            if (game == null)
+            {
+                return;
+            }
+
+            string result;
+
+            if(game.playerTotalScore > game.dealerTotalScore)
+            {
+                result = String.Format("Player win! {0}:{1}", game.playerTotalScore, game.dealerTotalScore);
+            }
+            else if(game.dealerTotalScore > game.playerTotalScore)
+            {
+                result = String.Format("You loose! {0}:{1}", game.playerTotalScore, game.dealerTotalScore);
+            } else
+            {
+                result = String.Format("It's draw! {0}:{1}", game.playerTotalScore, game.dealerTotalScore);
+            }
+
+            MessageBox.Show(result);
         }
     }
 }
